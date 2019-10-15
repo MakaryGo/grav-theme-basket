@@ -14,7 +14,7 @@
 {% endblock head%}
 
 {% block stylesheets %}
-    {% do assets.addCss('https://unpkg.com/purecss@1.0.0/build/pure-min.css', 100) %}
+    {% do assets.addCss('https://unpkg.com/picnic', 100) %}
     {% do assets.addCss('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', 99) %}
     {% do assets.addCss('theme://css/custom.css', 98) %}
 {% endblock %}
@@ -31,23 +31,21 @@
 <body id="top" class="{{ page.header.body_classes }}">
 
 {% block header %}
-    <div class="header">
-        <div class="wrapper padding">
-            <a class="logo left" href="{{ home_url }}">
-                <i class="fa fa-rebel"></i>
-                {{ config.site.title }}
-            </a>
-            {% block header_navigation %}
-            <nav class="main-nav">
-                {% include 'partials/navigation.html.twig' %}
-            </nav>
-            {% endblock %}
-        </div>
-    </div>
+<nav>
+  <a class="brand" href="{{ home_url }}">
+    <img src="{{ url('theme://images/logo.png') }}" alt="{{site.title|e('html')}}" class="logo">
+    <span>{{site.title|e('html')}}</span>
+  </a>
+  <input id="bmenub" type="checkbox" class="show">
+  <label for="bmenub" class="burger pseudo button">menu</label>
+  <div class="menu">
+    {% include 'layout/navigation.html.twig' %}
+  </div>
+</nav>
 {% endblock %}
 
 {% block body %}
-    <section id="body">
+    <section id="body" class="flex">
         <div class="wrapper padding">
         {% block content %}{% endblock %}
         </div>

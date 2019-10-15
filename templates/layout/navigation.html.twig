@@ -1,0 +1,13 @@
+{% for page in pages.children.visible %}
+  {% set current_page = (page.active or page.activeChild) ? 'button' : '' %}
+  <a href="{{ page.url }}" class="{{ current_page }}">
+    {% if page.header.icon %}<i class="fa fa-{{ page.header.icon }}"></i>{% endif %}
+    {{ page.menu }}
+  </a>
+{% endfor %}
+{% for mitem in site.menu %}
+  <a href="{{ mitem.url }}">
+    {% if mitem.icon %}<i class="fa fa-{{ mitem.icon }}"></i>{% endif %}
+    {{ mitem.text }}
+  </a>
+{% endfor %}
