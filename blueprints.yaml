@@ -1,16 +1,16 @@
 name: Basket
-version: 0.1.0
+version: 0.1.1-alpha
 description: Grav theme based on Picnic CSS framework
-icon: rebel
+icon: shopping-basket
 author:
   name: MakaryGo
-  email: siema@makary.online
+  email: git@makary.online
 homepage: https://github.com/MakaryGo/grav-theme-basket
 demo: http://demo.yoursite.com
-keywords: grav, theme, etc
+keywords: grav, theme, picnic, css3, semantic
 bugs: https://github.com/MakaryGo/grav-theme-basket/issues
 readme: https://github.com/MakaryGo/grav-theme-basket/blob/develop/README.md
-license: MIT
+license: WTFPL
 
 form:
   validation: loose
