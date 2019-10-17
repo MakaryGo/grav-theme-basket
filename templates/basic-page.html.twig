@@ -1,6 +1,9 @@
 {% extends 'layout/base.html.twig' %}
 
 {% block content %}
-    <pre>./templates/basic-page.html.twig</pre>
+    <pre>
+        ./templates/basic-page.html.twig
+        {{ page.header|print_r }}
+    </pre>
     {{ page.content }}
 {% endblock %}

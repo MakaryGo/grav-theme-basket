@@ -1,1 +1,11 @@
 title: "Basic page"
+
+form:
+  fields:
+    header.icon:
+      type: iconpicker
+      label: Page icon #TODO: Replace with translatable label
+    #
+    header.title:
+      type: text
+      label: PLUGIN_ADMIN.TITLE
