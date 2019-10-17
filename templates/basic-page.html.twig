@@ -1,9 +1,11 @@
 {% extends 'layout/base.html.twig' %}
 
 {% block content %}
+{% set p = page %}
+{% for item in p %}
     <pre>
-        ./templates/basic-page.html.twig
-        {{ page|print_r }}
+        <code class="lang-php">{{ item|print_r }}</code>
     </pre>
+{% endfor %}
     {{ page.content }}
 {% endblock %}
