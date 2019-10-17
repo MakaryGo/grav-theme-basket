@@ -3,9 +3,6 @@
 {% block content %}
 {% set p = page %}
 {% for item in p %}
-    <pre>
-        <code class="lang-php">{{ item|print_r }}</code>
-    </pre>
 {% endfor %}
     {{ page.content }}
 {% endblock %}
