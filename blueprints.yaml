@@ -6,7 +6,7 @@ author:
   name: MakaryGo
   email: git@makary.online
 homepage: https://github.com/MakaryGo/grav-theme-basket
-demo: http://demo.yoursite.com
+demo: http://basket.makary.online
 keywords: grav, theme, picnic, css3, semantic
 bugs: https://github.com/MakaryGo/grav-theme-basket/issues
 readme: https://github.com/MakaryGo/grav-theme-basket/blob/develop/README.md
@@ -15,13 +15,50 @@ license: WTFPL
 form:
   validation: loose
   fields:
-    dropdown.enabled:
-        type: toggle
-        label: Dropdown in Menu
-        highlight: 1
-        default: 1
-        options:
-          1: PLUGIN_ADMIN.ENABLED
-          0: PLUGIN_ADMIN.DISABLED
-        validate:
-          type: bool
+    tabs:
+      type: tabs
+      active: 1
+
+      fields:
+        site:
+          type: tab
+          title: PLUGIN_ADMIN.SITE
+          help: "Basic site settings"
+
+          fields:
+
+        theme:
+          type: tab
+          title: PLUGIN_ADMIN.THEME
+
+          fields:
+              breadcrumbs.enabled:
+                  type: toggle
+                  label: Breadcrumbs
+                  highlight: 1
+                  default: 1
+                  help: 'Enable breadcrumbs (current page path) on top of a page'
+                  options:
+                    1: PLUGIN_ADMIN.ENABLED
+                    0: PLUGIN_ADMIN.DISABLED
+                  validate:
+                    type: bool
+              menu.mobile.enabled:
+                  type: toggle
+                  label: Mobile slide-in menu
+                  highlight: 1
+                  default: 1
+                  options:
+                    1: PLUGIN_ADMIN.ENABLED
+                    0: PLUGIN_ADMIN.DISABLED
+                  validate:
+                    type: bool
+              menu.mobile.condition:
+                  type: conditional
+                  condition: config.theme.menu.mobile.enabled
+                  fields:
+                    menu.mobile.text:
+                      type: text
+                      label: Text to be used to display mobile menu
+                      default: menu
+

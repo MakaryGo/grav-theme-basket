@@ -1,0 +1,2 @@
+{% set p = page %}
+<small><a class="pseudo button" href="{{home_url}}"><i class="fa fa-home"></i></a> <i class="fa fa-chevron-right"></i>{% if p.parent and p.parent.menu != 'Pages'%}<a class="pseudo button" href="{{p.parent.url}}">{{p.parent.menu}}</a><i class="fa fa-chevron-right"></i>{% endif %} <a class="pseudo button disabled">{{p.menu}}</a></small>
